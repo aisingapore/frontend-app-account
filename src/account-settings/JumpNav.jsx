@@ -23,7 +23,6 @@ const JumpNav = ({
           'social-media',
           'site-preferences',
           'linked-accounts',
-          'delete-account',
         ]}
         className="list-unstyled"
         currentClassName="font-weight-bold"
@@ -59,11 +58,6 @@ const JumpNav = ({
         <li>
           <NavHashLink to="#linked-accounts">
             {intl.formatMessage(messages['account.settings.section.linked.accounts'])}
-          </NavHashLink>
-        </li>
-        <li>
-          <NavHashLink to="#delete-account">
-            {intl.formatMessage(messages['account.settings.jump.nav.delete.account'])}
           </NavHashLink>
         </li>
       </Scrollspy>
