@@ -29,7 +29,6 @@ import {
 import { accountSettingsPageSelector } from './data/selectors';
 import PageLoading from './PageLoading';
 import JumpNav from './JumpNav';
-import DeleteAccount from './delete-account';
 import EditableField from './EditableField';
 import EditableSelectField from './EditableSelectField';
 import ResetPassword from './reset-password';
@@ -74,7 +73,6 @@ class AccountSettingsPage extends React.Component {
       '#social-media': React.createRef(),
       '#site-preferences': React.createRef(),
       '#linked-accounts': React.createRef(),
-      '#delete-account': React.createRef(),
     };
   }
 
@@ -776,14 +774,6 @@ class AccountSettingsPage extends React.Component {
           </p>
           <ThirdPartyAuth />
         </div>
-
-        <div className="account-section pt-3 mb-5" id="delete-account" ref={this.navLinkRefs['#delete-account']}>
-          <DeleteAccount
-            isVerifiedAccount={this.props.isActive}
-            hasLinkedTPA={hasLinkedTPA}
-          />
-        </div>
-
       </>
     );
   }
