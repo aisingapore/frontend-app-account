@@ -22,7 +22,6 @@ const JumpNav = ({
           'demographics-information',
           'social-media',
           'site-preferences',
-          'linked-accounts',
         ]}
         className="list-unstyled"
         currentClassName="font-weight-bold"
@@ -53,11 +52,6 @@ const JumpNav = ({
         <li>
           <NavHashLink to="#site-preferences">
             {intl.formatMessage(messages['account.settings.section.site.preferences'])}
-          </NavHashLink>
-        </li>
-        <li>
-          <NavHashLink to="#linked-accounts">
-            {intl.formatMessage(messages['account.settings.section.linked.accounts'])}
           </NavHashLink>
         </li>
       </Scrollspy>

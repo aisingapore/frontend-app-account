@@ -31,9 +31,7 @@ import PageLoading from './PageLoading';
 import JumpNav from './JumpNav';
 import EditableField from './EditableField';
 import EditableSelectField from './EditableSelectField';
-import ResetPassword from './reset-password';
 import NameChange from './name-change';
-import ThirdPartyAuth from './third-party-auth';
 import BetaLanguageBanner from './BetaLanguageBanner';
 import EmailField from './EmailField';
 import OneTimeDismissibleAlert from './OneTimeDismissibleAlert';
@@ -72,7 +70,6 @@ class AccountSettingsPage extends React.Component {
       '#demographics-information': React.createRef(),
       '#social-media': React.createRef(),
       '#site-preferences': React.createRef(),
-      '#linked-accounts': React.createRef(),
     };
   }
 
@@ -601,11 +598,10 @@ class AccountSettingsPage extends React.Component {
               messages['account.settings.field.email.help.text'],
               { siteName: getConfig().SITE_NAME },
             )}
-            isEditable={this.isEditable('email')}
+            isEditable={false}
             {...editableFieldProps}
           />
           {this.renderSecondaryEmailField(editableFieldProps)}
-          <ResetPassword email={this.props.formValues.email} />
           {(!getConfig().ENABLE_COPPA_COMPLIANCE)
             && (
             <EditableSelectField
@@ -764,16 +760,6 @@ class AccountSettingsPage extends React.Component {
           />
         </div>
 
-        <div className="account-section pt-3 mb-5" id="linked-accounts" ref={this.navLinkRefs['#linked-accounts']}>
-          <h2 className="section-heading h4 mb-3">{this.props.intl.formatMessage(messages['account.settings.section.linked.accounts'])}</h2>
-          <p>
-            {this.props.intl.formatMessage(
-              messages['account.settings.section.linked.accounts.description'],
-              { siteName: getConfig().SITE_NAME },
-            )}
-          </p>
-          <ThirdPartyAuth />
-        </div>
       </>
     );
   }
